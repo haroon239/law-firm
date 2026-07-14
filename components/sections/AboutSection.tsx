@@ -78,9 +78,10 @@ export function AboutSection() {
 
                     {/* Content column */}
                     <div>
-                        <p className="text-amber-500 text-xs sm:text-sm font-bold tracking-widest uppercase mb-3">
-                            ⚖ About the Firm
-                        </p>
+                        <p className="flex items-center  gap-2 text-[#C8A24D] text-xs sm:text-sm font-bold tracking-widest uppercase mb-3">
+            <Scale className="w-4 h-4 sm:w-4.5 sm:h-4.5" strokeWidth={2} />
+ABOUT THE FIRM
+          </p>
                         <h2 className="text-3xl sm:text-4xl md:text-5xl xl:text-6xl max-w-xl font-serif font-bold text-white leading-tight mb-6">
                             Experience, Integrity, &amp; Dedicated Client Success
                         </h2>

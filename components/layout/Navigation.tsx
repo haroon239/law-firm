@@ -20,11 +20,23 @@ export function Navigation() {
 
   return (
     <nav
-      className={`${isSticky ? "fixed top-0 left-0 right-0 z-5 bg-[#111827] shadow-md" : "absolute top-[-20px] left-0 right-0 z-30 bg-transparent"
-        } transition-all duration-300`}
-    >
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="relative flex items-stretch justify-between bg-[#111827] rounded-md shadow-lg">
+  className={`${isSticky
+      ? "fixed top-0 left-0 right-0 z-50 bg-[#111827] shadow-md"
+      : "absolute top-0 md:top-[-17px] left-0 right-0 z-30 bg-[#111827] md:bg-transparent"
+    } transition-all duration-300`}
+>
+      <div className="mx-auto max-w-7xl px-0 sm:px-6 lg:px-8">
+        <div className="relative flex items-stretch justify-between bg-[#111827] rounded-none sm:rounded-md shadow-lg">
+
+          {/* Mobile-only logo, left side */}
+          <div className="flex lg:hidden items-center py-3 pl-4">
+            <img
+              src="/images/logo.jpeg"
+              alt="AG&R Law Firm"
+              className="h-10 w-10 rounded-full border-2 border-[#C8A24D] object-cover"
+            />
+          </div>
+
           {/* Desktop nav links */}
           <div className="hidden lg:flex items-center gap-6 py-5 pl-2">
             {navItems.map((item) => (
@@ -38,8 +50,8 @@ export function Navigation() {
             ))}
           </div>
 
-          {/* Mobile hamburger */}
-          <div className="flex lg:hidden items-center py-4 pl-2">
+          {/* Mobile hamburger, right side */}
+          <div className="flex lg:hidden items-center py-4 pr-4">
             <button
               onClick={() => setMobileOpen((v) => !v)}
               aria-label="Toggle menu"
@@ -49,10 +61,10 @@ export function Navigation() {
             </button>
           </div>
 
-          {/* Default (non-sticky) state: original contained block */}
+          {/* FREE CONSULTING — desktop only now */}
           {!isSticky && (
             <div
-              className="flex items-center bg-[#C8A24D] pl-6 pr-4 sm:pl-10 sm:pr-8"
+              className="hidden lg:flex items-center bg-[#C8A24D] pl-6 pr-4 sm:pl-10 sm:pr-8"
               style={{
                 clipPath: "polygon(15% 0, 100% 0, 100% 100%, 0% 100%)",
               }}
@@ -63,9 +75,8 @@ export function Navigation() {
             </div>
           )}
 
-          {/* Sticky state: invisible spacer matching enlarged block */}
           {isSticky && (
-            <div className="invisible hidden sm:flex items-center pl-16 pr-12 py-3">
+            <div className="invisible hidden lg:flex items-center pl-16 pr-12 py-3">
               <span className="text-sm md:text-base font-bold tracking-wide whitespace-nowrap">
                 FREE CONSULTING
               </span>
@@ -92,10 +103,10 @@ export function Navigation() {
         </div>
       )}
 
-      {/* Sticky state only: real block pinned to right edge, responsive size */}
+      {/* Sticky state, desktop only: FREE CONSULTING pinned right */}
       {isSticky && (
         <div
-          className="hidden sm:flex absolute top-0 bottom-0 right-0 items-center bg-[#C8A24D] pl-8 pr-6 py-3 md:pl-16 md:pr-12"
+          className="hidden lg:flex absolute top-0 bottom-0 right-0 items-center bg-[#C8A24D] pl-8 pr-6 py-3 md:pl-16 md:pr-12"
           style={{
             clipPath: "polygon(15% 0, 100% 0, 100% 100%, 0% 100%)",
           }}

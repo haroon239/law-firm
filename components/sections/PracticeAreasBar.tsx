@@ -20,20 +20,25 @@ const practiceAreas: PracticeArea[] = [
   { id: 3, name: "Family Law", icon: Users },
   { id: 4, name: "Business Law", icon: Briefcase },
   { id: 5, name: "Corporate Law", icon: Landmark },
-  { id: 6, name: "Civil Law", icon: Scale },
+  { id: 6, name: "Civil Law", icon: Scale }
 ];
 
 export function PracticeAreasBar() {
   return (
-    <section className="w-full bg-white border-y border-gray-100 py-8 sm:py-10">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-x-4 gap-y-5 sm:gap-x-6 md:gap-x-8">
-          {practiceAreas.map((area) => {
+    <section className="w-full bg-white border-y border-gray-100 py-8 sm:py-10 overflow-hidden">
+      <div className="relative w-full">
+        {/* fade edges so items don't hard-cut at screen boundary */}
+        <div className="pointer-events-none absolute inset-y-0 left-0 w-16 sm:w-24 bg-gradient-to-r from-white to-transparent z-10" />
+        <div className="pointer-events-none absolute inset-y-0 right-0 w-16 sm:w-24 bg-gradient-to-l from-white to-transparent z-10" />
+
+        <div className="flex w-max animate-marquee hover:[animation-play-state:paused]">
+          {/* render the list TWICE back-to-back so the loop is seamless */}
+          {[...practiceAreas, ...practiceAreas].map((area, idx) => {
             const Icon = area.icon;
             return (
               <div
-                key={area.id}
-                className="flex items-center gap-2 text-gray-500 hover:text-amber-600 transition-colors duration-300 cursor-pointer"
+                key={`${area.id}-${idx}`}
+                className="flex items-center gap-2 text-gray-500 hover:text-amber-600 transition-colors duration-300 cursor-pointer px-6 sm:px-8"
               >
                 <Icon className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6 shrink-0" strokeWidth={1.75} />
                 <span className="text-xs sm:text-sm md:text-base font-semibold whitespace-nowrap">
