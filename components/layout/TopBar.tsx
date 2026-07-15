@@ -11,7 +11,7 @@ export function TopBar() {
           <img
             src="/images/logo.jpeg"
             alt="AG&R Law Firm"
-            className="h-16 w-16 lg:h-20 lg:w-20 rounded-full border-2 border-[#C8A24D] shadow-md object-cover"
+            className="h-16 w-16 lg:h-20 lg:w-[87px] rounded-full border-2 border-[#C8A24D] shadow-md object-cover"
           />
         </div>
 

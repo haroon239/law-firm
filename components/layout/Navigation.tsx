@@ -2,8 +2,17 @@
 
 import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
+import Link from "next/link";
 
-const navItems = ["HOME", "ABOUT", "PRACTICE AREA", "PAGE", "ELEMENT", "BLOG", "CONTACT"];
+const navItems = [
+  { label: "HOME", href: "/" },
+  { label: "ABOUT", href: "/about" },
+  { label: "PRACTICE AREA", href: "#practice-area" },
+  { label: "PAGE", href: "#page" },
+  { label: "ELEMENT", href: "#element" },
+  { label: "BLOG", href: "#blog" },
+  { label: "CONTACT", href: "#contact" },
+];
 
 export function Navigation() {
   const [isSticky, setIsSticky] = useState(false);
@@ -20,11 +29,11 @@ export function Navigation() {
 
   return (
     <nav
-  className={`${isSticky
-      ? "fixed top-0 left-0 right-0 z-50 bg-[#111827] shadow-md"
-      : "absolute top-0 md:top-[-17px] left-0 right-0 z-30 bg-[#111827] md:bg-transparent"
-    } transition-all duration-300`}
->
+      className={`${isSticky
+          ? "fixed top-0 left-0 right-0 z-50 bg-[#111827] shadow-md"
+          : "absolute top-0 md:top-[-17px] left-0 right-0 z-30 bg-[#111827] md:bg-transparent"
+        } transition-all duration-300`}
+    >
       <div className="mx-auto max-w-7xl px-0 sm:px-6 lg:px-8">
         <div className="relative flex items-stretch justify-between bg-[#111827] rounded-none sm:rounded-md shadow-lg">
 
@@ -40,13 +49,13 @@ export function Navigation() {
           {/* Desktop nav links */}
           <div className="hidden lg:flex items-center gap-6 py-5 pl-2">
             {navItems.map((item) => (
-              <a
-                key={item}
-                href={`#${item.toLowerCase()}`}
+              <Link
+                key={item.label}
+                href={item.href}
                 className="text-white font-semibold text-sm hover:text-[#C8A24D] transition-colors"
               >
-                {item}
-              </a>
+                {item.label}
+              </Link>
             ))}
           </div>
 
@@ -90,14 +99,14 @@ export function Navigation() {
         <div className="lg:hidden bg-[#111827] border-t border-gray-700">
           <div className="flex flex-col px-4 py-3 gap-3">
             {navItems.map((item) => (
-              <a
-                key={item}
-                href={`#${item.toLowerCase()}`}
+              <Link
+                key={item.label}
+                href={item.href}
                 onClick={() => setMobileOpen(false)}
                 className="text-white font-semibold text-sm hover:text-[#C8A24D] transition-colors"
               >
-                {item}
-              </a>
+                {item.label}
+              </Link>
             ))}
           </div>
         </div>
