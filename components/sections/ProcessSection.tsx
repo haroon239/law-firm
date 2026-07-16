@@ -84,7 +84,7 @@ export function ProcessSection() {
   return (
     <section
       id="our-process"
-      className="w-full bg-neutral-950 py-16 sm:py-20 lg:py-24 relative overflow-hidden scroll-mt-24"
+      className="w-full bg-[#1b1919] py-16 sm:py-20 lg:py-24  relative overflow-hidden scroll-mt-24"
     >
       <div className="pointer-events-none absolute inset-0 opacity-30">
         <div className="absolute top-8 right-8 w-40 h-40 rounded-full border border-amber-500/30" />

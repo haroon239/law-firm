@@ -7,10 +7,10 @@ import Link from "next/link";
 const navItems = [
   { label: "HOME", href: "/" },
   { label: "ABOUT", href: "/about" },
-  { label: "PRACTICE AREA", href: "#practice-area" },
-  { label: "PAGE", href: "#page" },
-  { label: "ELEMENT", href: "#element" },
-  { label: "BLOG", href: "#blog" },
+  // { label: "PRACTICE AREA", href: "#practice-area" },
+  // { label: "PAGE", href: "#page" },
+  // { label: "ELEMENT", href: "#element" },
+  { label: "BLOG", href: "/blog" },
   { label: "CONTACT", href: "#contact" },
 ];
 
@@ -78,7 +78,7 @@ export function Navigation() {
                 clipPath: "polygon(15% 0, 100% 0, 100% 100%, 0% 100%)",
               }}
             >
-              <button className="text-white font-bold text-[10px] sm:text-xs md:text-sm tracking-wide whitespace-nowrap hover:text-[#C8A24D] transition-all duration-500 ease-in-out">
+              <button className="text-white cursor-pointer font-bold text-[10px] sm:text-xs md:text-sm tracking-wide whitespace-nowrap hover:text-[#705b2d] transition-all duration-500 ease-in-out">
                 FREE CONSULTING
               </button>
             </div>

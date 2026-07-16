@@ -63,7 +63,7 @@ const features: Feature[] = [
 
 export function WhyChooseUsSection() {
   return (
-    <section className="w-full bg-neutral-950 py-16 sm:py-20 lg:py-24 relative overflow-hidden">
+    <section className="w-full bg-gradient-to-b from-[#0B0B0B] to-[#111827] py-16 sm:py-20 lg:py-24 relative overflow-hidden">
       {/* top divider line, separates this section from the one above */}
       <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-amber-500/60 to-transparent" />
 
