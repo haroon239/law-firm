@@ -11,7 +11,7 @@ const navItems = [
   // { label: "PAGE", href: "#page" },
   // { label: "ELEMENT", href: "#element" },
   { label: "BLOG", href: "/blog" },
-  { label: "CONTACT", href: "#contact" },
+  { label: "CONTACT", href: "/contact" },
 ];
 
 export function Navigation() {

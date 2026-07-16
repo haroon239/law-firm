@@ -6,6 +6,7 @@ import { AboutHero } from "@/components/sections/about/AboutHero";
 import { OurStorySection } from "@/components/sections/about/OurStorySection";
 import { WhyChooseUsSection } from "@/components/sections/about/WhyChooseUsSection";
 import { FounderMessageSection } from "@/components/sections/about/FounderMessageSection";
+import TeamSection from "@/components/sections/about/TeamSection";
 export default function AboutPage() {
   return (
     <div className="min-h-screen bg-slate-50 text-slate-900">
@@ -15,6 +16,7 @@ export default function AboutPage() {
           <Navigation />
           <AboutHero />
           <OurStorySection/>
+          <TeamSection/>
           <WhyChooseUsSection/>
           <FounderMessageSection/>
         </div>
