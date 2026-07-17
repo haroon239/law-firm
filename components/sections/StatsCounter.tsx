@@ -72,24 +72,27 @@ function StatItem({ stat }: { stat: Stat }) {
 
   return (
     <div ref={ref} className="text-center">
-      <p className="font-serif text-3xl sm:text-4xl lg:text-5xl text-neutral-900 leading-none">
+      <p className="font-serif text-3xl leading-none text-white sm:text-4xl lg:text-5xl">
         {count}
-        <span className={`text-xl sm:text-2xl lg:text-3xl ${stat.suffixColor ?? "text-neutral-900"}`}>
+        <span className={`text-xl sm:text-2xl lg:text-3xl ${stat.suffixColor ?? "text-amber-300"}`}>
           {stat.suffix}
         </span>
       </p>
-      <p className="text-gray-500 text-xs sm:text-sm mt-2">{stat.label}</p>
+      <p className="mt-2 text-xs text-slate-400 sm:text-sm">{stat.label}</p>
     </div>
   );
 }
 
 export function StatsCounter() {
   return (
-    <section className="w-full bg-white py-6 sm:py-8">
+    <section className="relative w-full overflow-hidden border-y border-amber-400/10 bg-gradient-to-r from-[#080b12] via-[#151a26] to-[#080b12] py-9 sm:py-11">
+      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(212,175,55,0.07),transparent_55%)]" />
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 justify-items-center">
+        <div className="relative grid grid-cols-2 justify-items-center gap-8 lg:grid-cols-4 lg:divide-x lg:divide-white/10">
           {stats.map((stat) => (
-            <StatItem key={stat.id} stat={stat} />
+            <div key={stat.id} className="w-full">
+              <StatItem stat={stat} />
+            </div>
           ))}
         </div>
       </div>

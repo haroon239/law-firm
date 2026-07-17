@@ -112,7 +112,7 @@ export function TeamSection() {
   };
 
   return (
-    <section className="w-full bg-neutral-950 py-16 sm:py-20 lg:py-24">
+    <section className="w-full bg-gradient-to-b from-[#0a0d14] to-[#080b12] py-16 sm:py-20 lg:py-24">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Heading */}
         <div className="text-center mb-12 sm:mb-16">
